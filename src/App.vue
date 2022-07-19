@@ -1,8 +1,8 @@
 <script setup lang="ts">
 useHead({
-  title: 'Stater Vite',
+  title: 'Stater Vue',
   meta: [
-    { name: 'description', content: 'Opinionated Vite Starter Template' },
+    { name: 'description', content: 'Opinionated Vue Starter Template' },
     {
       name: 'theme-color',
       content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
