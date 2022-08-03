@@ -1,9 +1,9 @@
 import type { App } from 'vue'
 import { createPinia } from 'pinia'
+import type { UserModule } from '~/types'
 
-// Setup Pinia
 // https://pinia.esm.dev/
 const pinia = createPinia()
 
-export const setupPinia = (app: App<Element>) => app.use(pinia)
+export const setup: UserModule = (app: App<Element>) => app.use(pinia)
 

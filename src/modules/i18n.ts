@@ -1,9 +1,9 @@
 import type { App } from 'vue'
 import { createI18n } from 'vue-i18n'
+import type { UserModule } from '~/types'
 
 // Import i18n resources
 // https://vitejs.dev/guide/features.html#glob-import
-//
 const messages = Object.fromEntries(
   Object.entries(
     import.meta.glob<{ default: any }>('../../locales/*.y(a)?ml', { eager: true }))
@@ -19,4 +19,4 @@ const i18n = createI18n({
   messages,
 })
 
-export const setupI18n = (app: App<Element>) => app.use(i18n)
+export const setup: UserModule = (app: App<Element>) => app.use(i18n)
