@@ -7,7 +7,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Markdown from 'vite-plugin-vue-markdown'
 import Unocss from 'unocss/vite'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
@@ -31,7 +31,6 @@ export default defineConfig({
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
-      reactivityTransform: true,
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
@@ -46,9 +45,9 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
+        'pinia',
         'vue-router',
         'vue-i18n',
-        'vue/macros',
         '@vueuse/head',
         '@vueuse/core',
       ],

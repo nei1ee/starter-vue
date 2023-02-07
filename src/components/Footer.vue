@@ -9,7 +9,7 @@ const toggleLocales = () => {
 </script>
 
 <template>
-  <nav class="flex mt-6 opacity-75 text-2xl gap-4 justify-center items-center icon-color">
+  <nav class="icon-color mt-6 flex items-center justify-center gap-4 text-2xl opacity-75">
     <RouterLink class="hover:text-teal-600" to="/" :title="t('button.home')">
       <div class="i-carbon-campsite" />
     </RouterLink>

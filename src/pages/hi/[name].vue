@@ -11,7 +11,7 @@ watchEffect(() => {
 
 <template>
   <div class="px-4 pt-10">
-    <div class="text-5xl i-carbon-pedestrian" />
+    <div class="i-carbon-pedestrian text-5xl" />
 
     <p>
       {{ t('intro.hi', { name: props.name }) }}
@@ -22,7 +22,7 @@ watchEffect(() => {
     </p>
 
     <template v-if="user.otherNames.length">
-      <p text-sm mt-4>
+      <p mt-4 text-sm>
         <span opacity-75>{{ t('intro.aka') }}:</span>
         <ul>
           <li v-for="otherName in user.otherNames" :key="otherName">
@@ -36,8 +36,7 @@ watchEffect(() => {
 
     <div class="m-4">
       <button
-        class="rounded cursor-pointer bg-teal-700 text-white
-        py-1 px-4 inline-block hover:bg-teal-800" @click="router.back()"
+        class="inline-block cursor-pointer rounded bg-teal-700 px-4 py-1 text-white hover:bg-teal-800" @click="router.back()"
       >
         {{ t('button.back') }}
       </button>
