@@ -10,13 +10,14 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  // gray-200 dark:gray-700
   shortcuts: {
-    'bg-base': 'bg-white dark:bg-dark-300',
-    'bg-base-soft': 'bg-white dark:bg-dark-100',
-    'border-base': 'border-gray-200 dark:border-dark-100',
-    'color-base': 'text-gray-700 dark:text-gray-300',
-    'color-fade': 'text-gray-700:50 dark:text-gray-300:50',
+    'u-bg': 'bg-gray-100 dark:bg-black',
+    'u-bg-2': 'bg-white dark:bg-[#1C1C1E]',
+    'u-border': 'border-[#EBEDF0] dark:border-[#3A3A3C]',
+    'u-active': 'bg-[#F2F3F5] dark:!bg-[#3A3A3C]',
+    'u-text-color': 'text-[#323233] dark:text-[#F5F5F5]',
+    'u-text-color-2': 'text-[#969799] dark:text-[#707070]',
+    'u-text-color-3': 'text-[#C8C9CC] dark:text-[#4D4D4D]',
   },
   presets: [
     presetUno(),

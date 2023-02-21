@@ -19,7 +19,5 @@ useHead({
 </script>
 
 <template>
-  <div class="h-full bg-base">
-    <RouterView />
-  </div>
+  <RouterView />
 </template>
