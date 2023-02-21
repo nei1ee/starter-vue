@@ -1,4 +1,4 @@
-## Starter Vue
+# Starter Vue
 
 <a href="https://starter-vue.vercel.app/">Live Demo</a>
 
@@ -26,14 +26,11 @@
 
 - 🔥 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
 
-- 🤙🏻 [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) enabled
-
 - 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
 
 - ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest)
 
-
-## Try it now!
+## Try it now
 
 ### GitHub Template
 
@@ -66,7 +63,7 @@ And, enjoy :)
 
 ### Development
 
-Just run and visit http://localhost:3000
+Just run and visit [http://localhost:3000](http://location:3000)
 
 ```bash
 pnpm dev
@@ -81,7 +78,6 @@ pnpm build
 ```
 
 And you will see the generated file in `dist` that ready to be served.
-
 
 ## Thanks
 

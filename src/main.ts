@@ -11,8 +11,9 @@ async function bootstrap() {
   const app = createApp(App)
 
   // Configure @vueuse/head, pinia, multi-language, and router
-  Object.values(import.meta.glob<{ setup: UserModule }>('./modules/*.ts', { eager: true }))
-    .forEach(i => i.setup?.(app))
+  Object.values(
+    import.meta.glob<{ setup: UserModule }>('./modules/*.ts', { eager: true }),
+  ).forEach(m => m.setup?.(app))
 
   // Mount when the route is ready
   // https://next.router.vuejs.org/api/#isready
@@ -21,4 +22,4 @@ async function bootstrap() {
   app.mount('#app', true)
 }
 
-bootstrap()
+await bootstrap()

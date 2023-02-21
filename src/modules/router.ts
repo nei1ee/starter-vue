@@ -18,7 +18,8 @@ router.beforeEach((to, from) => {
     NProgress.start()
 })
 
-router.afterEach(() => { NProgress.done() })
+router.afterEach(() => {
+  NProgress.done()
+})
 
 export const setup: UserModule = (app: App<Element>) => app.use(router)
-

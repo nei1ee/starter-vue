@@ -1,4 +1,4 @@
-import { acceptHMRUpdate, defineStore } from 'pinia'
+import { pinia } from '~/modules/pinia'
 
 export const useUserStore = defineStore('user', () => {
   /**
@@ -29,6 +29,11 @@ export const useUserStore = defineStore('user', () => {
     savedName,
   }
 })
+
+// Need to be used outside the setup
+export function useAppStoreWidthOut() {
+  return useUserStore(pinia)
+}
 
 if (import.meta.hot)
   import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
