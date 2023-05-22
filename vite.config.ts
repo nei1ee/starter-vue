@@ -1,7 +1,8 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
+import VueRouter from 'unplugin-vue-router/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Layouts from 'vite-plugin-vue-layouts'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -29,13 +30,14 @@ export default defineConfig({
   },
 
   plugins: [
-    Vue({
-      include: [/\.vue$/, /\.md$/],
+    // https://github.com/posva/unplugin-vue-router
+    VueRouter({
+      extensions: ['.vue', '.md'],
+      dts: 'src/typings/typed-router.d.ts',
     }),
 
-    // https://github.com/hannoeru/vite-plugin-pages
-    Pages({
-      extensions: ['vue', 'md'],
+    Vue({
+      include: [/\.vue$/, /\.md$/],
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
@@ -46,26 +48,21 @@ export default defineConfig({
       imports: [
         'vue',
         'pinia',
-        'vue-router',
         'vue-i18n',
         '@vueuse/head',
         '@vueuse/core',
+        VueRouterAutoImports,
       ],
-      dts: 'src/auto-imports.d.ts',
-      dirs: [
-        'src/composables',
-        'src/stores',
-      ],
+      dts: 'src/typings/auto-imports.d.ts',
       vueTemplate: true,
     }),
 
     // https://github.com/antfu/unplugin-vue-components
     Components({
-      // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dts: 'src/components.d.ts',
+      dts: 'src/typings/components.d.ts',
     }),
 
     // https://github.com/antfu/vite-plugin-vue-markdown

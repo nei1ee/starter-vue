@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { isDark, preferredDark } from '~/composables/dark'
+
 useHead({
   title: 'Stater Vue',
   meta: [
